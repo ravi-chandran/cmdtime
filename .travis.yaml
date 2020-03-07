@@ -1,15 +1,17 @@
 language: python
+os:
+  - linux
+#  - windows  # Travis CI does not support python on Windows currently
 python:
-  - "3.4"
-  - "3.5"
-  - "3.6"      # current default Python on Travis CI
-  - "3.7"
+#  - "3.5"
+#  - "3.6"      # current default Python on Travis CI
+  - "3.7"       # tests don't work on 3.6 or earlier due to subprocess changes
   - "3.8"
   - "3.8-dev"  # 3.8 development branch
   - "nightly"  # nightly build
 # command to install dependencies
-#install:
-#  - pip install -r requirements.txt
+install:
+  - python -m pip install --editable .
 # command to run tests
 script:
-  - pytest
+  - pytest -v
