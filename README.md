@@ -58,7 +58,18 @@ python -m twine upload dist/*
 ```
 
 ## Testing Notes
+Tests are written to support both Windows and Linux, although this utility is not really needed in Linux.
+
+- Install `pytest`:
 ```bat
 python -m pip install --upgrade pytest
+```
+
+- Local testing:
+```bat
 pytest -v
 ```
+
+- Travis CI:
+  - Right now, Travis CI doesn't support Python on Windows, so this can only be tested on Linux.
+  - The tests only work on Python 3.7 or later as the `subprocess.run()` had significant changes in parameters (`capture_output`, `text`) not available in earlier versions. While it's possible to create version-specific test code to be compatible with earlier versions, it's not worth the effort...
