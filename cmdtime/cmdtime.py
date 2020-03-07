@@ -11,7 +11,11 @@ def main():
     subprocess.run(command, shell=True)
     end = time.monotonic()
 
-    print('Elapsed Time: %.1f sec' % (end - start))
+    seconds = round(end - start)
+    minutes, seconds = divmod(seconds, 60)
+    hours, minutes = divmod(minutes, 60)
+
+    print('Elapsed Time: {:02d}:{:02d}:{:02d}'.format(hours, minutes, seconds))
 
 if __name__ == "__main__":
     main()
