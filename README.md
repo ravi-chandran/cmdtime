@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ravi-chandran/cmdtime.svg?branch=master)](https://travis-ci.org/ravi-chandran/cmdtime)
+
 # cmdtime
 - Similar to the Linux `time` utility for measuring how long a command takes to run
 - Useful for the Windows Command Prompt using pure Python.
