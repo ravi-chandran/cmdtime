@@ -6,7 +6,7 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
     name="cmdtime",
-    version="0.0.1",
+    version="0.0.3",
     packages=setuptools.find_packages(),
 
     entry_points = {
